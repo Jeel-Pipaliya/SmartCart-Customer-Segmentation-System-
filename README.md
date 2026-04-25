@@ -1,39 +1,31 @@
 # 🛒 SmartCart Customer Segmentation System
 
+An intelligent customer clustering system built with **Streamlit** and **Scikit-learn**.
+
+## 🚀 Live Demo
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smartcart-customer-segmentation.streamlit.app)
 
-An intelligent customer segmentation system for SmartCart e-commerce platform using unsupervised machine learning (K-Means & Agglomerative Clustering).
-
----
-
-## 📌 Features
+## 📋 Features
 
 | Page | Description |
 |---|---|
-| 📊 Data Analysis | Upload CSV, explore EDA, distributions, correlations |
-| 🤖 Clustering Model | Train K-Means or Agglomerative, elbow method, silhouette scores |
-| 📈 Visualizations | 2D/3D PCA plots, radar charts, heatmaps |
-| 🎯 Predict Segment | Input new customer data → get predicted cluster + marketing tip |
+| 🏠 Home | Project overview and navigation guide |
+| 📊 EDA & Preprocessing | Data exploration, feature engineering, outlier removal |
+| 🔬 Model Training | PCA, Elbow Method, Silhouette Analysis, KMeans & Agglomerative |
+| 📈 Cluster Analysis | Segment visualisations, radar charts, business recommendations |
 
-## 🗂️ Project Structure
+## 🗂️ Dataset
+- 2240 customer records, 22 attributes
+- Demographics, purchase behaviour, website activity
 
-```
-smartcart/
-├── app.py                          # Home page
-├── pages/
-│   ├── 1_📊_Data_Analysis.py
-│   ├── 2_🤖_Clustering_Model.py
-│   ├── 3_📈_Visualizations.py
-│   └── 4_🎯_Predict_Segment.py
-├── utils/
-│   ├── preprocessing.py            # Data cleaning & feature engineering
-│   └── clustering.py               # Model training & evaluation
-├── .streamlit/
-│   └── config.toml
-└── requirements.txt
-```
+## ⚙️ Tech Stack
+- **Streamlit** — UI
+- **Pandas / NumPy** — Data processing
+- **Scikit-learn** — PCA, KMeans, AgglomerativeClustering
+- **Seaborn / Matplotlib** — Visualisations
+- **Kneed** — Automatic elbow detection
 
-## 🚀 Run Locally
+## 🛠️ Run Locally
 
 ```bash
 git clone https://github.com/Jeel-Pipaliya/SmartCart-Customer-Segmentation-System-.git
@@ -46,35 +38,20 @@ streamlit run app.py
 
 1. Push this repo to GitHub
 2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Click **New App**
-4. Set:
-   - **Repository**: `Jeel-Pipaliya/SmartCart-Customer-Segmentation-System-`
-   - **Branch**: `main`
-   - **Main file path**: `app.py`
-5. Click **Deploy** ✅
+3. Click **New app** → select repo → set **Main file path** to `app.py`
+4. Click **Deploy**
 
-## 📊 Dataset
-
-The app expects `smartcart_customers.csv` with 22 features:
-
-**Demographics:** `ID, Year_Birth, Education, Marital_Status, Income, Kidhome, Teenhome, Dt_Customer`
-
-**Spending:** `MntWines, MntFruits, MntMeatProducts, MntFishProducts, MntSweetProducts, MntGoldProds`
-
-**Purchases:** `NumDealsPurchases, NumWebPurchases, NumCatalogPurchases, NumStorePurchases, NumWebVisitsMonth`
-
-**Other:** `Recency, Complain`
-
-## 🔬 ML Pipeline
+## 📁 Project Structure
 
 ```
-Raw CSV → Preprocessing → Feature Engineering → StandardScaler → PCA → K-Means / Agglomerative → Evaluation → Visualizations
+├── app.py                          # Home page
+├── pages/
+│   ├── 1_📊_EDA_&_Preprocessing.py
+│   ├── 2_🔬_Model_Training.py
+│   └── 3_📈_Cluster_Analysis.py
+├── smartcart_customers.csv         # Dataset
+├── requirements.txt
+├── .streamlit/
+│   └── config.toml                 # Dark theme config
+└── README.md
 ```
-
-**Engineered Features:** `Age, Customer_Days, TotalSpend, TotalPurchases, TotalChildren, Is_Partnered`
-
-**Metrics Used:** Silhouette Score, Davies-Bouldin Index, Calinski-Harabasz Score
-
-## 👤 Author
-
-**Jeel Pipaliya** — AI/ML Engineer
